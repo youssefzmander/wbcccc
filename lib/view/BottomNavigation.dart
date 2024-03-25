@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:wbcc/models/nettoyage_model.dart';
 import 'package:wbcc/services/LocalStorageService.dart';
+import 'package:wbcc/view/Nettoyage_page.dart';
 import 'package:wbcc/view/SignIn.dart';
+import 'package:wbcc/view/carburant_page.dart';
 import 'package:wbcc/view/home.dart';
+import 'package:wbcc/view/suivi_page.dart';
 
 class BottomNavigation extends StatefulWidget {
   @override
@@ -26,9 +30,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   final List<Widget> _pages = [
      HomePage(),
-    // History(),
-    // Informations(),
-    // Profile(),
+     Nettoyage_page(),
+     Carburant_page(),
+     Suivi_page(),
   ];
 
   final List<String> _pagesTitle = [
@@ -109,15 +113,15 @@ class _BottomNavigationState extends State<BottomNavigation> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.control_point, size: 27),
-            label: 'History',
+            label: 'Suivi',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.cleaning_services, size: 27),
-            label: 'Informations',
+            label: 'Nettoyage',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.local_gas_station,size: 27),
-            label: 'Profile',
+            label: 'Carburant',
           ),
         ],
       ),
